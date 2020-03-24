@@ -1,0 +1,89 @@
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-wbrkg[0m
+{"level":"warn","ts":1585078351.4386542,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585078351.4395678,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-f6qq7[0m
+{"level":"warn","ts":1585078352.4975107,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585078352.4985778,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-jr-dev2-go1-master-2vm46-l6wtm[0m
+{"level":"warn","ts":1585078429.6094234,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585078430.643226,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/jr-dev2-go1.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/jr-dev2-go1 main.go
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0324 19:34:03.364011      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/jr-dev2-go1"]                  
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2020/03/24 19:34:07 pushed blob: sha256:3d7cc04eec6cbfcee8af64d8c0ea44595e961fb246defc70f4582b2bf6de561a
+2020/03/24 19:34:08 pushed blob: sha256:a36eb7a0a851ca3cfcdcdcff73e88e979234c98320ce7209e87150105c777fad
+2020/03/24 19:34:09 gcr.io/**-development/jr-dev2-go1:0.0.1: digest: sha256:536f49cb50ab761b294c46ad1acea22073dde128c9c2e8ff3180be226ccce88e size: 428
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/jr-dev2-go1 to an unshallow repository
+Generating change log from git ref 520cc44c585c4b75756f27c9b4e3f5155a2c9efc => beb274a1242b9a862b753f6884d4f90911f41162
+Associating user x-0 in users.jenkins.io with email rawlingsj80@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 5a82f9080bb1e7a87f73cc1e8a82c06336b62387 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/jr-dev2-go1 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/jr-dev2-go1/releases/tag/v0.0.1
+generated: /workspace/source/charts/jr-dev2-go1/templates/release.yaml
+Created Release jr-dev2-go1-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-jr-dev2-go1-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-jr-dev2-go1-master-1 with release notes URL: https://github.com/cb-kubecd/jr-dev2-go1/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file jr-dev2-go1-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-jr-dev2-go1-master-2vm46-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app jr-dev2-go1 version 0.0.1 to namespace **-staging
+WARNING: 
+WARNING: Waiting for the fork of ******************/environment-jr-dev2-staging to appear...
+Forked Git repository to https://github.com/******************/environment-jr-dev2-staging
+Created Pull Request: https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+Added label updatebot to Pull Request https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+got git provider status pending from PR https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1
+Pull Request https://github.com/cb-kubecd/environment-jr-dev2-staging/pull/1 is merged at sha f2043e670f909cbeaa69cdde4117c037deb448eb
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names jr-dev2-go1, **-jr-dev2-go1, **-staging-jr-dev2-go1
